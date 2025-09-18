@@ -1,31 +1,7 @@
+
 [
     {
-        "Name": "cname-prd-prometheus.sa.internal.samsungacr.com.",
-        "Type": "TXT",
-        "TTL": 300,
-        "ResourceRecords": [
-            {
-                "Value": "\"heritage=external-dns,external-dns/owner=PRD-EKS-SA,external-dns/resource=service/monitoring/prometheus-k8s\""
-            }
-        ]
-    },
-    {
-        "Name": "prd-prometheus.sa.internal.samsungacr.com.",
-        "Type": "A",
-        "AliasTarget": {
-            "HostedZoneId": "Z2P70J7HTTTPLU",
-            "DNSName": "internal-a3dff60ff261c4ca293311a1926c0081-1185648221.sa-east-1.elb.amazonaws.com.",
-            "EvaluateTargetHealth": true
-        }
-    },
-    {
-        "Name": "prd-prometheus.sa.internal.samsungacr.com.",
-        "Type": "TXT",
-        "TTL": 300,
-        "ResourceRecords": [
-            {
-                "Value": "\"heritage=external-dns,external-dns/owner=PRD-EKS-SA,external-dns/resource=service/monitoring/prometheus-k8s\""
-            }
-        ]
+        "Name": "a3dff60ff261c4ca293311a1926c0081",
+        "DNSName": "internal-a3dff60ff261c4ca293311a1926c0081-1185648221.sa-east-1.elb.amazonaws.com"
     }
 ]
