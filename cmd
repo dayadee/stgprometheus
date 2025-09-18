@@ -1,2 +1,19 @@
-DNSNAME: internal-aa419275b815c436f81c4aed4d451d86-376881644.us-east-1.elb.amazonaws.com.
-"LoadBalancerName": "aa419275b815c436f81c4aed4d451d86"
+aws route53 list-hosted-zones-by-name --dns-name prd-prometheu.na.internal.samsungacr.com
+
+{
+    "HostedZones": [
+        {
+            "Id": "/hostedzone/Z0847277PEVFY425TS9Q",
+            "Name": "sa.internal.samsungacr.com.",
+            "CallerReference": "ROUTE53-INTERN-DNS-1IWSKVLPTH25E",
+            "Config": {
+                "Comment": "Internal",
+                "PrivateZone": true
+            },
+            "ResourceRecordSetCount": 101
+        }
+    ],
+    "DNSName": "prd-prometheu.na.internal.samsungacr.com",
+    "IsTruncated": false,
+    "MaxItems": "100"
+}
