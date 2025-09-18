@@ -1,4 +1,4 @@
-aws route53 list-hosted-zones-by-name --dns-name prd-prometheu.na.internal.samsungacr.com
+aws route53 list-hosted-zones-by-name --dns-name prd-prometheus.na.internal.samsungacr.com 
 
 {
     "HostedZones": [
@@ -13,7 +13,7 @@ aws route53 list-hosted-zones-by-name --dns-name prd-prometheu.na.internal.samsu
             "ResourceRecordSetCount": 101
         }
     ],
-    "DNSName": "prd-prometheu.na.internal.samsungacr.com",
+    "DNSName": "prd-prometheus.na.internal.samsungacr.com",
     "IsTruncated": false,
     "MaxItems": "100"
 }
