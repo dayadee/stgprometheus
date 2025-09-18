@@ -1,0 +1,55 @@
+kubectl -n monitoring describe svc prometheus-k8s
+
+Name:                     prometheus-k8s
+Namespace:                monitoring
+Labels:                   app.kubernetes.io/component=prometheus
+                          app.kubernetes.io/instance=prometheus-operator-na-prd
+                          app.kubernetes.io/name=prometheus
+                          app.kubernetes.io/part-of=kube-prometheus
+                          app.kubernetes.io/version=2.45.0
+Annotations:              external-dns.alpha.kubernetes.io/aws-zone-type-private: true
+                          external-dns.alpha.kubernetes.io/hostname: prd-prometheus.na.internal.samsungacr.com
+                          service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags:
+                            samsungads.com/stackPath=ops.kubernetes.argo/tree/master/applications/prometheus-operator,samsungads.com/owner=cg-acr-data,samsungads.com/...
+                          service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+                          service.beta.kubernetes.io/aws-load-balancer-internal: true
+                          service.beta.kubernetes.io/aws-load-balancer-security-groups: sg-07d104bd322ebbb99,sg-035072ba8e277dab3
+                          service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-east-1:833376745199:certificate/77c64892-593d-4ef4-95d8-c426e538b4d4
+Selector:                 app.kubernetes.io/component=prometheus,app.kubernetes.io/instance=k8s,app.kubernetes.io/name=prometheus,app.kubernetes.io/part-of=kube-prometheus
+Type:                     LoadBalancer
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.100.40.25
+IPs:                      10.100.40.25
+LoadBalancer Ingress:     internal-aa419275b815c436f81c4aed4d451d86-376881644.us-east-1.elb.amazonaws.com
+Port:                     web  443/TCP
+TargetPort:               9090/TCP
+NodePort:                 web  32077/TCP
+Endpoints:                172.17.21.192:9090,172.17.18.211:9090,172.17.13.205:9090 + 1 more...
+Port:                     reloader-web  8080/TCP
+TargetPort:               reloader-web/TCP
+NodePort:                 reloader-web  31658/TCP
+Endpoints:                172.17.21.192:8080,172.17.18.211:8080,172.17.13.205:8080 + 1 more...
+Port:                     thanos  10901/TCP
+TargetPort:               10901/TCP
+NodePort:                 thanos  32254/TCP
+Endpoints:                172.17.21.192:10901,172.17.18.211:10901,172.17.13.205:10901 + 1 more...
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Internal Traffic Policy:  Cluster
+Events:
+  Type     Reason                  Age                    From                Message
+  ----     ------                  ----                   ----                -------
+  Warning  SyncLoadBalancerFailed  53m                    service-controller  Error syncing load balancer: failed to ensure load balancer: Multiple untagged security groups found for instance i-0c98023eb8fbdd314; ensure the k8s security group is tagged
+  Warning  SyncLoadBalancerFailed  43m (x64 over 8d)      service-controller  Error syncing load balancer: failed to ensure load balancer: Multiple untagged security groups found for instance i-06478cd03ed09bb5a; ensure the k8s security group is tagged
+  Warning  SyncLoadBalancerFailed  33m (x59 over 8d)      service-controller  Error syncing load balancer: failed to ensure load balancer: Multiple untagged security groups found for instance i-02d17e6172a957f97; ensure the k8s security group is tagged
+  Warning  SyncLoadBalancerFailed  28m (x84 over 8d)      service-controller  Error syncing load balancer: failed to ensure load balancer: Multiple untagged security groups found for instance i-084b2925469f83fae; ensure the k8s security group is tagged
+  Warning  SyncLoadBalancerFailed  8m27s (x3 over 58m)    service-controller  Error syncing load balancer: failed to ensure load balancer: Multiple untagged security groups found for instance i-0aef9a70314dbe0fc; ensure the k8s security group is tagged
+  Normal   EnsuringLoadBalancer    3m27s (x2607 over 8d)  service-controller  Ensuring load balancer
+  Warning  SyncLoadBalancerFailed  3m26s (x1287 over 8d)  service-controller  (combined from similar events): Error syncing load balancer: failed to ensure load balancer: Multiple untagged security groups found for instance i-0d4579138a67c7200; ensure the k8s security group is tagged
+
+
+
+❯ kubectl -n monitoring get endpoints prometheus-k8s
+NAME             ENDPOINTS                                                               AGE
+prometheus-k8s   172.17.13.205:8080,172.17.165.146:8080,172.17.18.211:8080 + 9 more...   3y147d
