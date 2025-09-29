@@ -1,42 +1,42 @@
-k get podmonitors flink-metrics -n monitoring -o yaml
-apiVersion: monitoring.coreos.com/v1
-kind: PodMonitor
-metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"monitoring.coreos.com/v1","kind":"PodMonitor","metadata":{"annotations":{},"labels":{"app":"flink"},"name":"flink-metrics","namespace":"monitoring"},"spec":{"namespaceSelector":{"matchNames":["flink"]},"podMetricsEndpoints":[{"port":"prometheus"}],"selector":{"matchLabels":{"app":"flink"}}}}
-  creationTimestamp: "2022-06-23T17:42:21Z"
-  generation: 3
-  labels:
-    app: flink
-    k8slens-edit-resource-version: v1
-  name: flink-metrics
-  namespace: monitoring
-  resourceVersion: "1535282446"
-  uid: 7131d4b7-db23-4f48-aecb-393533c6d646
-spec:
-  namespaceSelector:
-    matchNames:
-    - flink
-    - flink-a
-    - flink-b
-    - flink-backfill
-  podMetricsEndpoints:
-  - port: prometheus
-  selector:
-    matchLabels:
-      app: flink
-❯ k get pod pii-virtualizer-tm-f4d56c9d-7hlbm -n flink-a -o yaml | grep -A3 ports:
+In that case kindly see below
+
+k get pods -n flink-a
+NAME                                                    READY   STATUS    RESTARTS   AGE
+pii-virtualizer-jm-6f9ddfccdb-7vsth                     1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-7hlbm                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-8tw67                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-9dxth                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-bzss6                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-hvd57                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-knjlp                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-lj87f                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-qkbw9                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-qzk7w                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-r9bbw                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-t7vb5                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-wfrh4                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-z8nf8                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-zcx6b                       1/1     Running   0          25m
+pii-virtualizer-tm-f4d56c9d-zhsrp                       1/1     Running   0          25m
+psid-mapper-log-type-content-jm-665c7675dd-bjvgn        1/1     Running   0          102d
+psid-mapper-log-type-content-tm-6747f87c7f-wn5td        1/1     Running   0          22d
+psid-mapper-log-type-event-jm-5777f467b8-w5jm2          1/1     Running   0          102d
+psid-mapper-log-type-event-tm-7bc954b5d5-vbkhx          1/1     Running   0          22d
+psid-mapper-log-type-input-source-jm-7cf7bcb694-vq6lb   1/1     Running   0          173d
+psid-mapper-log-type-input-source-tm-7fbbfcf7-2vlrd     1/1     Running   0          22d
+psid-mapper-log-type-version-jm-86bf877d4d-b9q2d        1/1     Running   0          173d
+psid-mapper-log-type-version-tm-d4446cf7c-tlfvk         1/1     Running   0          22d
+res-ce-jm-6d5c5fd7fb-bc4b9                              1/1     Running   0          152d
+res-ce-tm-7bf9f77f45-2mrdn                              1/1     Running   0          21d
+res-ce-tm-7bf9f77f45-2xdmd                              1/1     Running   0          22d
+res-ce-tm-7bf9f77f45-bnvn4                              1/1     Running   0          22d
+res-ce-tm-7bf9f77f45-qqvmh                              1/1     Running   0          21d
+❯ k get pod psid-mapper-log-type-content-jm-665c7675dd-bjvgn -n flink-a -o yaml | grep -A3 ports
     ports:
-    - containerPort: 6122
+    - containerPort: 6123
       name: rpc
       protocol: TCP
-❯ k get pod pii-virtualizer-tm-f4d56c9d-8tw67  -n flink-a -o yaml | grep -A3 ports
-    ports:
-    - containerPort: 6122
-      name: rpc
-      protocol: TCP
-❯ k get pod pii-virtualizer-tm-f4d56c9d-hvd57  -n flink-a -o yaml | grep -A3 ports
+❯ k get pod psid-mapper-log-type-content-tm-6747f87c7f-wn5td -n flink-a -o yaml | grep -A3 ports
     ports:
     - containerPort: 6122
       name: rpc
