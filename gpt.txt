@@ -1,21 +1,75 @@
+ k get all -n flink-a
+NAME                                                        READY   STATUS    RESTARTS   AGE
+pod/pii-virtualizer-jm-6f9ddfccdb-7vsth                     1/1     Running   0          81s
+pod/pii-virtualizer-tm-f4d56c9d-7hlbm                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-8tw67                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-9dxth                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-bzss6                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-hvd57                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-knjlp                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-lj87f                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-qkbw9                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-qzk7w                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-r9bbw                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-t7vb5                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-wfrh4                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-z8nf8                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-zcx6b                       1/1     Running   0          78s
+pod/pii-virtualizer-tm-f4d56c9d-zhsrp                       1/1     Running   0          78s
+pod/psid-mapper-log-type-content-jm-665c7675dd-bjvgn        1/1     Running   0          102d
+pod/psid-mapper-log-type-content-tm-6747f87c7f-wn5td        1/1     Running   0          22d
+pod/psid-mapper-log-type-event-jm-5777f467b8-w5jm2          1/1     Running   0          102d
+pod/psid-mapper-log-type-event-tm-7bc954b5d5-vbkhx          1/1     Running   0          22d
+pod/psid-mapper-log-type-input-source-jm-7cf7bcb694-vq6lb   1/1     Running   0          173d
+pod/psid-mapper-log-type-input-source-tm-7fbbfcf7-2vlrd     1/1     Running   0          22d
+pod/psid-mapper-log-type-version-jm-86bf877d4d-b9q2d        1/1     Running   0          173d
+pod/psid-mapper-log-type-version-tm-d4446cf7c-tlfvk         1/1     Running   0          22d
+pod/res-ce-jm-6d5c5fd7fb-bc4b9                              1/1     Running   0          152d
+pod/res-ce-tm-7bf9f77f45-2mrdn                              1/1     Running   0          21d
+pod/res-ce-tm-7bf9f77f45-2xdmd                              1/1     Running   0          22d
+pod/res-ce-tm-7bf9f77f45-bnvn4                              1/1     Running   0          22d
+pod/res-ce-tm-7bf9f77f45-qqvmh                              1/1     Running   0          21d
 
-up{container="jobmanager", endpoint="prometheus", instance="172.17.165.4:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="psid-mapper-log-type-input-source-jm-7cf7bcb694-vq6lb"}
-up{container="jobmanager", endpoint="prometheus", instance="172.17.171.235:9249", job="monitoring/flink-metrics", namespace="flink", pod="psid-mapper-log-type-content-jm-78bf8dfdc4-4wkpv"}
-up{container="jobmanager", endpoint="prometheus", instance="172.17.175.253:9249", job="monitoring/flink-metrics", namespace="flink", pod="psid-mapper-log-type-event-jm-6db797f7b4-nhwk6"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.160.127:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="psid-mapper-log-type-content-tm-6747f87c7f-wn5td"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.160.75:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-vdtbr"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.161.105:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-zf5g2"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.161.22:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="res-ce-tm-7bf9f77f45-2xdmd"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.162.125:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-lqq44"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.166.126:9249", job="monitoring/flink-metrics", namespace="flink", pod="psid-mapper-log-type-content-tm-5cf947969c-7zkq9"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.166.154:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="res-ce-tm-7bf9f77f45-bnvn4"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.166.236:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-pmgqc"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.166.236:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-rgkd2"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.166.48:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-72rm2"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.166.48:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-85xpj"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.169.247:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-qh86h"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.170.15:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-4dq5c"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.173.62:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-2vb8c"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.173.62:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-cpxqb"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.174.106:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-hz9hw"}
-up{container="taskmanager", endpoint="prometheus", instance="172.17.183.3:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-r5wb8"}
+NAME                                           TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                                                                      AGE
+service/pii-virtualizer-jm                     NodePort   10.100.31.143   <none>        6123:31554/TCP,6124:31790/TCP,8081:30883/TCP,8888:30151/TCP,9249:32698/TCP   81s
+service/psid-mapper-log-type-content-jm        NodePort   10.100.169.30   <none>        6123:31281/TCP,6124:30714/TCP,8081:31872/TCP,8888:32155/TCP,9249:32362/TCP   102d
+service/psid-mapper-log-type-event-jm          NodePort   10.100.252.84   <none>        6123:31391/TCP,6124:30239/TCP,8081:30227/TCP,8888:31355/TCP,9249:31266/TCP   102d
+service/psid-mapper-log-type-input-source-jm   NodePort   10.100.241.77   <none>        6123:31754/TCP,6124:31794/TCP,8081:32120/TCP,8888:32704/TCP,9249:32616/TCP   173d
+service/psid-mapper-log-type-version-jm        NodePort   10.100.39.251   <none>        6123:31412/TCP,6124:30935/TCP,8081:32692/TCP,8888:32438/TCP,9249:32584/TCP   173d
+service/res-ce-jm                              NodePort   10.100.230.42   <none>        6123:31197/TCP,6124:31204/TCP,8081:31968/TCP,8888:30095/TCP,9249:30322/TCP   152d
+service/sta-jm                                 NodePort   10.100.151.52   <none>        6123:32087/TCP,6124:32297/TCP,8081:31298/TCP,8888:30864/TCP,9249:31560/TCP   317d
+
+NAME                                                   READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/pii-virtualizer-jm                     1/1     1            1           86s
+deployment.apps/pii-virtualizer-tm                     15/15   15           15          83s
+deployment.apps/psid-mapper-log-type-content-jm        1/1     1            1           102d
+deployment.apps/psid-mapper-log-type-content-tm        1/1     1            1           102d
+deployment.apps/psid-mapper-log-type-event-jm          1/1     1            1           102d
+deployment.apps/psid-mapper-log-type-event-tm          1/1     1            1           102d
+deployment.apps/psid-mapper-log-type-input-source-jm   1/1     1            1           173d
+deployment.apps/psid-mapper-log-type-input-source-tm   1/1     1            1           173d
+deployment.apps/psid-mapper-log-type-version-jm        1/1     1            1           173d
+deployment.apps/psid-mapper-log-type-version-tm        1/1     1            1           173d
+deployment.apps/res-ce-jm                              1/1     1            1           152d
+deployment.apps/res-ce-tm                              4/4     4            4           152d
+
+NAME                                                              DESIRED   CURRENT   READY   AGE
+replicaset.apps/pii-virtualizer-jm-6f9ddfccdb                     1         1         1       87s
+replicaset.apps/pii-virtualizer-tm-f4d56c9d                       15        15        15      84s
+replicaset.apps/psid-mapper-log-type-content-jm-665c7675dd        1         1         1       102d
+replicaset.apps/psid-mapper-log-type-content-tm-6747f87c7f        1         1         1       102d
+replicaset.apps/psid-mapper-log-type-event-jm-5777f467b8          1         1         1       102d
+replicaset.apps/psid-mapper-log-type-event-tm-7bc954b5d5          1         1         1       102d
+replicaset.apps/psid-mapper-log-type-input-source-jm-7cf7bcb694   1         1         1       173d
+replicaset.apps/psid-mapper-log-type-input-source-tm-7fbbfcf7     1         1         1       173d
+replicaset.apps/psid-mapper-log-type-version-jm-86bf877d4d        1         1         1       173d
+replicaset.apps/psid-mapper-log-type-version-tm-d4446cf7c         1         1         1       173d
+replicaset.apps/res-ce-jm-6d5c5fd7fb                              1         1         1       152d
+replicaset.apps/res-ce-tm-7bf9f77f45                              4         4         4       152d
+
+NAME                                                       STATUS     COMPLETIONS   DURATION   AGE
+job.batch/psid-mapper-log-type-content-deployer-job        Complete   1/1           32s        102d
+job.batch/psid-mapper-log-type-event-deployer-job          Complete   1/1           29s        102d
+job.batch/psid-mapper-log-type-input-source-deployer-job   Complete   1/1           114s       173d
+job.batch/psid-mapper-log-type-version-deployer-job        Complete   1/1           110s       173d
+job.batch/res-ce-deployer-job                              Complete   1/1           49s        152d
