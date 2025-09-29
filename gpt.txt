@@ -1,27 +1,24 @@
-❯ k get servicemonitors -A
-NAMESPACE    NAME                             AGE
-monitoring   alertmanager-main                3y99d
-monitoring   argocd-metrics                   3y99d
-monitoring   argocd-repo-server-metrics       3y99d
-monitoring   argocd-server-metrics            3y99d
-monitoring   coredns                          3y99d
-monitoring   kafka-connect                    458d
-monitoring   kafka-connect-na-stg-latest      2y66d
-monitoring   karpenter                        469d
-monitoring   kube-apiserver                   3y99d
-monitoring   kube-controller-manager          3y99d
-monitoring   kube-cost-na-stg-cost-analyzer   2y190d
-monitoring   kube-scheduler                   3y99d
-monitoring   kube-state-metrics               3y99d
-monitoring   kubecost                         297d
-monitoring   kubelet                          3y99d
-monitoring   node-exporter                    3y99d
-monitoring   opencost-servicemonitor          2y355d
-monitoring   prometheus-adapter               3y99d
-monitoring   prometheus-k8s                   3y99d
-monitoring   prometheus-operator              3y99d
-monitoring   prometheus-statsd-exporter       285d
-monitoring   spot-price-exporter              2y180d
-monitoring   thanos-query                     2y52d
-monitoring   thanos-rule                      297d
-monitoring   thanos-store                     2y52d
+ k rollout restart deployment pii-virtualizer-tm -n flink-a
+deployment.apps/pii-virtualizer-tm restarted
+❯ k rollout restart deployment pii-virtualizer-jm -n flink-a
+Warning: spec.template.spec.affinity.nodeAffinity.requiredDuringSchedulingIgnoredDuringExecution.nodeSelectorTerms[0].matchExpressions[1].key: beta.kubernetes.io/arch is deprecated since v1.14; use "kubernetes.io/arch" instead
+deployment.apps/pii-virtualizer-jm restarted
+❯ k get pods -n flink-a | grep pii-virtualizer-
+❯ k get pods -n flink-a | grep pii-virtualizer-
+❯ k get pods -n flink-a
+NAME                                                    READY   STATUS    RESTARTS   AGE
+psid-mapper-log-type-content-jm-665c7675dd-bjvgn        1/1     Running   0          102d
+psid-mapper-log-type-content-tm-6747f87c7f-wn5td        1/1     Running   0          22d
+psid-mapper-log-type-event-jm-5777f467b8-w5jm2          1/1     Running   0          102d
+psid-mapper-log-type-event-tm-7bc954b5d5-vbkhx          1/1     Running   0          22d
+psid-mapper-log-type-input-source-jm-7cf7bcb694-vq6lb   1/1     Running   0          173d
+psid-mapper-log-type-input-source-tm-7fbbfcf7-2vlrd     1/1     Running   0          22d
+psid-mapper-log-type-version-jm-86bf877d4d-b9q2d        1/1     Running   0          173d
+psid-mapper-log-type-version-tm-d4446cf7c-tlfvk         1/1     Running   0          22d
+res-ce-jm-6d5c5fd7fb-bc4b9                              1/1     Running   0          152d
+res-ce-tm-7bf9f77f45-2mrdn                              1/1     Running   0          21d
+res-ce-tm-7bf9f77f45-2xdmd                              1/1     Running   0          22d
+res-ce-tm-7bf9f77f45-bnvn4                              1/1     Running   0          22d
+res-ce-tm-7bf9f77f45-qqvmh                              1/1     Running   0          21d
+❯ k rollout restart deployment pii-virtualizer-jm -n flink-a
+Error from server (NotFound): deployments.apps "pii-virtualizer-jm" not found
