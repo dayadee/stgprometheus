@@ -1,54 +1,24 @@
- k get rs -n flink-a
-NAME                                              DESIRED   CURRENT   READY   AGE
-pii-virtualizer-jm-6f9ddfccdb                     1         1         1       33s
-pii-virtualizer-tm-7bff4dfb46                     10        10        10      27s
-psid-mapper-log-type-content-jm-665c7675dd        1         1         1       102d
-psid-mapper-log-type-content-tm-6747f87c7f        1         1         1       102d
-psid-mapper-log-type-event-jm-5777f467b8          1         1         1       102d
-psid-mapper-log-type-event-tm-7bc954b5d5          1         1         1       102d
-psid-mapper-log-type-input-source-jm-7cf7bcb694   1         1         1       173d
-psid-mapper-log-type-input-source-tm-7fbbfcf7     1         1         1       173d
-psid-mapper-log-type-version-jm-86bf877d4d        1         1         1       173d
-psid-mapper-log-type-version-tm-d4446cf7c         1         1         1       173d
-res-ce-jm-6d5c5fd7fb                              1         1         1       152d
-res-ce-tm-7bf9f77f45                              4         4         4       152d
-❯ k get pods -n flink-a
-NAME                                                    READY   STATUS    RESTARTS   AGE
-pii-virtualizer-jm-6f9ddfccdb-x8dxp                     1/1     Running   0          45s
-pii-virtualizer-tm-7bff4dfb46-25k56                     1/1     Running   0          39s
-pii-virtualizer-tm-7bff4dfb46-2l64w                     1/1     Running   0          39s
-pii-virtualizer-tm-7bff4dfb46-6znng                     1/1     Running   0          39s
-pii-virtualizer-tm-7bff4dfb46-8zl6r                     1/1     Running   0          39s
-pii-virtualizer-tm-7bff4dfb46-9psgd                     1/1     Running   0          39s
-pii-virtualizer-tm-7bff4dfb46-hl5dn                     1/1     Running   0          39s
-pii-virtualizer-tm-7bff4dfb46-w2c72                     1/1     Running   0          39s
-pii-virtualizer-tm-7bff4dfb46-wkbmt                     1/1     Running   0          39s
-pii-virtualizer-tm-7bff4dfb46-xlx62                     1/1     Running   0          39s
-pii-virtualizer-tm-7bff4dfb46-zrkzj                     1/1     Running   0          39s
-psid-mapper-log-type-content-jm-665c7675dd-bjvgn        1/1     Running   0          102d
-psid-mapper-log-type-content-tm-6747f87c7f-wn5td        1/1     Running   0          22d
-psid-mapper-log-type-event-jm-5777f467b8-w5jm2          1/1     Running   0          102d
-psid-mapper-log-type-event-tm-7bc954b5d5-vbkhx          1/1     Running   0          22d
-psid-mapper-log-type-input-source-jm-7cf7bcb694-vq6lb   1/1     Running   0          173d
-psid-mapper-log-type-input-source-tm-7fbbfcf7-2vlrd     1/1     Running   0          22d
-psid-mapper-log-type-version-jm-86bf877d4d-b9q2d        1/1     Running   0          173d
-psid-mapper-log-type-version-tm-d4446cf7c-tlfvk         1/1     Running   0          22d
-res-ce-jm-6d5c5fd7fb-bc4b9                              1/1     Running   0          152d
-res-ce-tm-7bf9f77f45-2mrdn                              1/1     Running   0          21d
-res-ce-tm-7bf9f77f45-2xdmd                              1/1     Running   0          22d
-res-ce-tm-7bf9f77f45-bnvn4                              1/1     Running   0          22d
-res-ce-tm-7bf9f77f45-qqvmh                              1/1     Running   0          21d
-❯ k get deployments -n flink-a
-NAME                                   READY   UP-TO-DATE   AVAILABLE   AGE
-pii-virtualizer-jm                     1/1     1            1           117s
-pii-virtualizer-tm                     10/10   10           10          111s
-psid-mapper-log-type-content-jm        1/1     1            1           102d
-psid-mapper-log-type-content-tm        1/1     1            1           102d
-psid-mapper-log-type-event-jm          1/1     1            1           102d
-psid-mapper-log-type-event-tm          1/1     1            1           102d
-psid-mapper-log-type-input-source-jm   1/1     1            1           173d
-psid-mapper-log-type-input-source-tm   1/1     1            1           173d
-psid-mapper-log-type-version-jm        1/1     1            1           173d
-psid-mapper-log-type-version-tm        1/1     1            1           173d
-res-ce-jm                              1/1     1            1           152d
-res-ce-tm                              4/4     4            4           152d
+Now see this from cluster and prometheus UI
+
+k get pods -n flink-a | grep pii-virtualizer-
+pii-virtualizer-jm-6f9ddfccdb-x8dxp                     1/1     Running   0          4m50s
+pii-virtualizer-tm-7bff4dfb46-25k56                     1/1     Running   0          4m44s
+pii-virtualizer-tm-7bff4dfb46-2l64w                     1/1     Running   0          4m44s
+pii-virtualizer-tm-7bff4dfb46-6znng                     1/1     Running   0          4m44s
+pii-virtualizer-tm-7bff4dfb46-8zl6r                     1/1     Running   0          4m44s
+pii-virtualizer-tm-7bff4dfb46-9psgd                     1/1     Running   0          4m44s
+pii-virtualizer-tm-7bff4dfb46-hl5dn                     1/1     Running   0          4m44s
+pii-virtualizer-tm-7bff4dfb46-w2c72                     1/1     Running   0          4m44s
+pii-virtualizer-tm-7bff4dfb46-wkbmt                     1/1     Running   0          4m44s
+pii-virtualizer-tm-7bff4dfb46-xlx62                     1/1     Running   0          4m44s
+pii-virtualizer-tm-7bff4dfb46-zrkzj                     1/1     Running   0          4m44s
+
+
+
+up{container="jobmanager", endpoint="prometheus", instance="172.17.25.31:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-jm-6f9ddfccdb-x8dxp"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.162.125:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-7bff4dfb46-hl5dn"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.165.198:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-7bff4dfb46-w2c72"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.166.236:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-7bff4dfb46-2l64w"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.168.173:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-7bff4dfb46-9psgd"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.173.62:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-7bff4dfb46-xlx62"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.183.3:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-7bff4dfb46-25k56"}
