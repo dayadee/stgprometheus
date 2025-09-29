@@ -1,0 +1,5 @@
+I'm resposbile to make all pods or jobs metrics to refelect in Prometheus and I got below query for Engineering team. Guide me on this
+
+The metrics seem to be in accurate.Looks like Metrics is not getting scraped from all the nodes,I notice that for a flink job I am running on 10 nodes, the metrics appear only from 7 nodes, 3 nodes are missing in prometheus/grafana, resulting in incorrect overall number. Could you please check on this?
+
+Also I see job name is PII_Virtualization_Kafka
