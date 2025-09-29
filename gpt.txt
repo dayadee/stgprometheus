@@ -1,5 +1,21 @@
-I'm resposbile to make all pods or jobs metrics to refelect in Prometheus and I got below query for Engineering team. Guide me on this
 
-The metrics seem to be in accurate.Looks like Metrics is not getting scraped from all the nodes,I notice that for a flink job I am running on 10 nodes, the metrics appear only from 7 nodes, 3 nodes are missing in prometheus/grafana, resulting in incorrect overall number. Could you please check on this?
-
-Also I see job name is PII_Virtualization_Kafka
+up{container="jobmanager", endpoint="prometheus", instance="172.17.165.4:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="psid-mapper-log-type-input-source-jm-7cf7bcb694-vq6lb"}
+up{container="jobmanager", endpoint="prometheus", instance="172.17.171.235:9249", job="monitoring/flink-metrics", namespace="flink", pod="psid-mapper-log-type-content-jm-78bf8dfdc4-4wkpv"}
+up{container="jobmanager", endpoint="prometheus", instance="172.17.175.253:9249", job="monitoring/flink-metrics", namespace="flink", pod="psid-mapper-log-type-event-jm-6db797f7b4-nhwk6"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.160.127:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="psid-mapper-log-type-content-tm-6747f87c7f-wn5td"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.160.75:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-vdtbr"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.161.105:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-zf5g2"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.161.22:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="res-ce-tm-7bf9f77f45-2xdmd"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.162.125:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-lqq44"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.166.126:9249", job="monitoring/flink-metrics", namespace="flink", pod="psid-mapper-log-type-content-tm-5cf947969c-7zkq9"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.166.154:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="res-ce-tm-7bf9f77f45-bnvn4"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.166.236:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-pmgqc"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.166.236:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-rgkd2"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.166.48:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-72rm2"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.166.48:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-85xpj"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.169.247:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-qh86h"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.170.15:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-4dq5c"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.173.62:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-2vb8c"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.173.62:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-cpxqb"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.174.106:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-hz9hw"}
+up{container="taskmanager", endpoint="prometheus", instance="172.17.183.3:9249", job="monitoring/flink-metrics", namespace="flink-a", pod="pii-virtualizer-tm-748778b947-r5wb8"}
